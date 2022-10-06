@@ -7,4 +7,4 @@ Console.Write("Введите параметр b: ");
 double b = double.Parse(Console.ReadLine());
 double z3 = Math.Cos(b) + Math.Cos(2 * b) + Math.Cos(6 * b) + Math.Cos(7 * b); // 6 example 
 double z4 = 4 * Math.Cos(b / 2) * Math.Cos(5 / 2 * b) * Math.Cos(4 * b);
-Console.WriteLine($"z2: {z2:0.000}\n z4: {z4:0.000}");
+Console.WriteLine($"z3: {z3:0.000}\n z4: {z4:0.000}");
