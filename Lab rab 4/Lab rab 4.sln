@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab rab 4", "Lab rab 4\Lab rab 4.csproj", "{AE233CAD-F957-4053-AAF4-03F696E9649B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AE233CAD-F957-4053-AAF4-03F696E9649B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE233CAD-F957-4053-AAF4-03F696E9649B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE233CAD-F957-4053-AAF4-03F696E9649B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE233CAD-F957-4053-AAF4-03F696E9649B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {710903F8-33F0-4F48-83DD-4593EC3137BC}
+	EndGlobalSection
+EndGlobal
