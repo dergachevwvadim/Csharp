@@ -3,7 +3,6 @@ using System;
 using System.Net.Sockets;
 using System.Security.Cryptography;
 using System.Runtime.ExceptionServices;
-
 class Person
 {
     string Name;
@@ -27,6 +26,10 @@ class Person
     {
         return Name;
     }
+    public string getSurname()
+    {
+        return Surname;
+    }
     public long getCreditcardnumber()
     {
         return Creditcardnumber;
@@ -45,91 +48,61 @@ class Person
     }
     public string info()
     {
-        return String.Format("{0} {1} {2} \nНомер кредитной карты:{3}",
-        Name, Patronymic, Surname, Creditcardnumber);
+        return String.Format("{0} {1} {2} \nНомер кредитной карты:{3}\nНомер банковского счета:{4} \nНомер телефона:{5} \nГород проживания:{6} ",
+        Name, Patronymic, Surname, Creditcardnumber, Bankaccountnumber, Phonenumber, Address);
     }
 }
-
 class Program
 {
     static void Main()
     {
-        Person BobkovVD = new Person("Vlad", "Bobkov", "Dmitrievich", 89999999999, "SpB", 1234567890, 223456);
-        Person IvanovII = new Person("Ivan", "Ivanov", "Ivanovich", 88888888888, "Ufa", 1234567890, 223456);
-        Person DergachevVV = new Person("Vadim", "Dergachev", "Vadimovich", 87777777777, "Moscow", 1234567890, 223456);
-        Console.WriteLine("Напишите фамилию и инициалы человека для отображения информации");
-        string Name = Console.ReadLine();       
-        switch (Name)
+        int n = 4;
+        int i = 0;
+        bool none = true;
+        Person[] MassPerson = new Person[n];
+        MassPerson[0] = new Person("Vlad", "Bobkov", "Dmitrievich", 89999999999, "SpB", 1234567890, 223456);
+        MassPerson[1] = new Person("Ivan", "Ivanov", "Ivanovich", 88888888888, "Ufa", 1234567890, 223456);
+        MassPerson[2] = new Person("Vadim", "Dergachev", "Vadimovich", 87777777777, "Moscow", 1234567890, 223456);
+        MassPerson[3] = new Person("Vadim", "Baranov", "Nikolaevich", 8666666666, "Ural", 1234567890, 223456);
+        Console.WriteLine("Напишите Имя человека");
+        string Name = Console.ReadLine();
+        Console.WriteLine("Напишите Фамилию человека для отображения информации");
+        string Surname = Console.ReadLine();
+        for (i = 0; i < n; i++)
         {
-            case "DergachevVV":
-                Console.WriteLine("Напишите, что именно вы хотите узнать\nСписок команд:\nНомер кредитной карты\nГород проживания\nНомер банковского счета\nНомер телефона\nВся информация");
-                string Commands1 = Console.ReadLine();
-                switch (Commands1)
+            if (MassPerson[i].getName() == Name)
+            {
+                if (MassPerson[i].getSurname() == Surname)
                 {
-                    case "Номер кредитной карты":
-                        Console.WriteLine(DergachevVV.getCreditcardnumber());
-                        break;
-                    case "Город проживания":
-                        Console.WriteLine(DergachevVV.getAddress());
-                        break;
-                    case "Номер банковского счета":
-                        Console.WriteLine(DergachevVV.getBankaccountnumber());
-                        break;
-                    case "Номер телефона":
-                        Console.WriteLine(DergachevVV.getPhonenumber());
-                        break;
-                    case "Вся информация":
-                        Console.WriteLine(DergachevVV.info());
-                        break;
+                    none = false;
+                    Console.WriteLine("Напишите, что именно вы хотите узнать\nСписок команд:\n1. Номер кредитной карты\n2. Город проживания\n3. Номер банковского счета\n4. Номер телефона\n5. Вся информация");
+                    string Commands1 = Console.ReadLine();
+                    switch (Commands1)
+                    {
+                        case "1":
+                            Console.WriteLine(MassPerson[i].getCreditcardnumber());
+                            break;
+                        case "2":
+                            Console.WriteLine(MassPerson[i].getAddress());
+                            break;
+                        case "3":
+                            Console.WriteLine(MassPerson[i].getBankaccountnumber());
+                            break;
+                        case "4":
+                            Console.WriteLine(MassPerson[i].getPhonenumber());
+                            break;
+                        case "5":
+                            Console.WriteLine(MassPerson[i].info());
+                            break;
+                        default: break;
+                    }
                 }
-                break;
-            case "BobkovVD":
-                Console.WriteLine("Напишите, что именно вы хотите узнать\nСписок команд:\nНомер кредитной карты\nГород проживания\nНомер банковского счета\nНомер телефона\nВся информация");
-                string Commands2 = Console.ReadLine();
-                switch (Commands2)
-                {
-                    case "Номер кредитной карты":
-                        Console.WriteLine(BobkovVD.getCreditcardnumber());
-                        break;
-                    case "Город проживания":
-                        Console.WriteLine(BobkovVD.getAddress());
-                        break;
-                    case "Номер банковского счета":
-                        Console.WriteLine(BobkovVD.getBankaccountnumber());
-                        break;
-                    case "Номер телефона":
-                        Console.WriteLine(BobkovVD.getPhonenumber());
-                        break;
-                    case "Вся информация":
-                        Console.WriteLine(BobkovVD.info());
-                        break;
-                }
-                break;
-            case "IvanovII":
-                Console.WriteLine("Напишите, что именно вы хотите узнать\nСписок команд:\nНомер кредитной карты\nГород проживания\nНомер банковского счета\nНомер телефона\nВся информация");
-                string Commands3 = Console.ReadLine();
-                switch (Commands3)
-                {
-                    case "Номер кредитной карты":
-                        Console.WriteLine(IvanovII.getCreditcardnumber());
-                        break;
-                    case "Город проживания":
-                        Console.WriteLine(IvanovII.getAddress());
-                        break;
-                    case "Номер банковского счета":
-                        Console.WriteLine(IvanovII.getBankaccountnumber());
-                        break;
-                    case "Номер телефона":
-                        Console.WriteLine(IvanovII.getPhonenumber());
-                        break;
-                    case "Вся информация":
-                        Console.WriteLine(IvanovII.info());
-                        break;
-                }
-                break;
-            default:
-                Console.WriteLine("В базе нет такого человека");
-                break;
+            }
         }
+        if (none) 
+        {
+        Console.WriteLine("В базе нет такого человека"); 
+        }
+        i = 0;
     }
 }
