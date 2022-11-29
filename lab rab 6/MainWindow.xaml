@@ -1,0 +1,149 @@
+﻿<Window x:Class="lab_rab_6.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:lab_rab_6"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="570" Width="350" Background="#FF202020">
+    <Grid Height="570">
+        <TextBox x:Name="txtDisplay2" HorizontalAlignment="Center" Margin="0,69,0,0" Text="5678" VerticalAlignment="Top" Width="325" Background="#FF202020" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" FontFamily="Gadugi" FontSize="14" Foreground="{DynamicResource {x:Static SystemColors.AppWorkspaceBrushKey}}" Height="25" TextAlignment="Right" Grid.RowSpan="1"/>
+        <TextBox x:Name="txtDisplay1" HorizontalAlignment="Center" Margin="0,85,0,0" Text="5678" VerticalAlignment="Top" Width="327" Background="#FF202020" BorderBrush="{x:Null}" SelectionBrush="{x:Null}" SelectionTextBrush="{x:Null}" FontFamily="Gadugi" FontSize="30" Foreground="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}" Height="50" TextAlignment="Right" FontWeight="Bold" Grid.RowSpan="1"/>
+        <Button Content="tg(x)" HorizontalAlignment="Left" Margin="286,156,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Height="30" Width="50" FontFamily="Gadugi" FontSize="14" Grid.RowSpan="1" AutomationProperties.Name="BtnTg">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button Content="cos(x)" HorizontalAlignment="Left" Margin="231,156,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Height="30" Width="50" FontFamily="Gadugi" FontSize="14" Grid.RowSpan="1" AutomationProperties.Name="BtnCos">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button Content="sin(x)" HorizontalAlignment="Left" Margin="176,156,0,0" VerticalAlignment="Top" Background="{x:Null}" BorderBrush="{x:Null}" Height="30" Width="50" FontFamily="Gadugi" FontSize="14" Grid.RowSpan="1" AutomationProperties.Name="BtnSin">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="BtnC" Content="C" Margin="176,191,0,0" Background="#FF3C3C3C" BorderBrush="{x:Null}" FontSize="20" FontFamily="Gadugi" Height="55" VerticalAlignment="Top" Grid.ColumnSpan="1" HorizontalAlignment="Left" Width="80" AutomationProperties.Name="BtnC">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="BtnCE" Content="CE" Margin="91,191,0,0" Background="#FF3C3C3C" BorderBrush="{x:Null}" FontSize="20" ForceCursor="True" FontFamily="Gadugi" Height="55" VerticalAlignment="Top" Grid.RowSpan="1" HorizontalAlignment="Left" Width="80" AutomationProperties.Name="BtnCE">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="BtnPercent" Content="%" Background="#FF3C3C3C" BorderBrush="{x:Null}" Margin="6,191,0,0" FontSize="20" FontFamily="Gadugi" Height="55" VerticalAlignment="Top" Grid.RowSpan="1" HorizontalAlignment="Left" Width="80" AutomationProperties.Name="BtnPrecent">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="BtnDelete" Content="" Margin="260,191,0,0" FontSize="20" FontFamily="Gadugi" Foreground="{x:Null}" BorderBrush="{x:Null}" Height="55" VerticalAlignment="Top" HorizontalAlignment="Left" Width="80" Grid.RowSpan="1" AutomationProperties.Name="BtnDel">
+            <Button.Background>
+                <ImageBrush ImageSource="/icons8-clear-symbol-100 (4).png" Stretch="UniformToFill"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnSqrt" Content="√x" HorizontalAlignment="Left" Margin="176,251,0,0" VerticalAlignment="Top" Background="#FF3C3C3C" BorderBrush="{x:Null}" Height="55" Width="80" FontSize="20" FontFamily="Gadugi" Grid.RowSpan="1" AutomationProperties.Name="BtnSqrt">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="BtnPow" Content="x²" HorizontalAlignment="Left" Margin="91,251,0,0" VerticalAlignment="Top" Background="#FF3C3C3C" BorderBrush="{x:Null}" Height="55" Width="80" FontSize="20" FontFamily="Gadugi" Grid.RowSpan="1" AutomationProperties.Name="BtnPow">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Btn1_x" Content="1/x" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF3C3C3C" BorderBrush="{x:Null}" Height="55" Width="80" Margin="6,250,0,0" FontSize="20" FontFamily="Gadugi" RenderTransformOrigin="0.5,0.519" AutomationProperties.Name="Btn1/x">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="BtnDiv" Content="÷" HorizontalAlignment="Left" Margin="260,251,0,0" VerticalAlignment="Top" Background="#FF3C3C3C" BorderBrush="{x:Null}" Height="55" Width="80" FontSize="20" FontFamily="Gadugi" Grid.RowSpan="1" AutomationProperties.Name="BtnDiv" Click="BtnMath_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Btn9" Content="9" HorizontalAlignment="Left" Margin="176,311,0,0" VerticalAlignment="Top" Background="#FF3C3C3C" BorderBrush="{x:Null}" Height="55" Width="80" FontSize="20" FontFamily="Gadugi" Grid.RowSpan="1" AutomationProperties.Name="Btn9" Click="BtnNum_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Btn8" Content="8" HorizontalAlignment="Left" Margin="91,311,0,0" VerticalAlignment="Top" Background="#FF3C3C3C" BorderBrush="{x:Null}" Height="55" Width="80" FontSize="20" FontFamily="Gadugi" Grid.RowSpan="1" AutomationProperties.Name="Btn8" Click="BtnNum_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Btn7" Content="7" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF3C3C3C" BorderBrush="{x:Null}" Height="55" Width="80" Margin="6,311,0,0" FontSize="20" FontFamily="Gadugi" Grid.RowSpan="1" AutomationProperties.Name="Btn7" Click="BtnNum_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="BtnMlt" Content="×" HorizontalAlignment="Left" Margin="260,311,0,0" VerticalAlignment="Top" Background="#FF3C3C3C" BorderBrush="{x:Null}" Height="55" Width="80" FontSize="20" FontFamily="Gadugi" Grid.RowSpan="1" AutomationProperties.Name="BtnMlt" Click="BtnMath_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Btn6" Content="6" HorizontalAlignment="Left" Margin="176,371,0,0" VerticalAlignment="Top" Background="#FF3C3C3C" BorderBrush="{x:Null}" Height="55" Width="80" FontSize="20" FontFamily="Gadugi" Grid.RowSpan="1" AutomationProperties.Name="Btn6" Click="BtnNum_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Btn5" Content="5" HorizontalAlignment="Left" Margin="91,371,0,0" VerticalAlignment="Top" Background="#FF3C3C3C" BorderBrush="{x:Null}" Height="55" Width="80" FontSize="20" FontFamily="Gadugi" Grid.RowSpan="1" AutomationProperties.Name="Btn5" Click="BtnNum_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Btn4" Content="4" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF3C3C3C" BorderBrush="{x:Null}" Height="55" Width="80" Margin="6,371,0,0" FontSize="20" FontFamily="Gadugi" Grid.RowSpan="1" AutomationProperties.Name="Btn4" Click="BtnNum_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="BtnMinus" Content="-" HorizontalAlignment="Left" Margin="260,371,0,0" VerticalAlignment="Top" Background="#FF3C3C3C" BorderBrush="{x:Null}" Height="55" Width="80" FontSize="20" FontFamily="Gadugi" Grid.RowSpan="1" AutomationProperties.Name="BtnMinus" Click="BtnMath_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Btn3" Content="3" HorizontalAlignment="Left" Margin="176,431,0,0" VerticalAlignment="Top" Background="#FF3C3C3C" BorderBrush="{x:Null}" Height="55" Width="80" FontSize="20" FontFamily="Gadugi" Grid.RowSpan="1" AutomationProperties.Name="Btn3" Click="BtnNum_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Btn2" Content="2" HorizontalAlignment="Left" Margin="91,431,0,0" VerticalAlignment="Top" Background="#FF3C3C3C" BorderBrush="{x:Null}" Height="55" Width="80" FontSize="20" FontFamily="Gadugi" Grid.RowSpan="1" AutomationProperties.Name="Btn2" Click="BtnNum_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Btn1" Content="1" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF3C3C3C" BorderBrush="{x:Null}" Height="55" Width="80" Margin="6,431,0,0" FontSize="20" FontFamily="Gadugi" Grid.RowSpan="1" AutomationProperties.Name="Btn1" Click="BtnNum_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="BtnPlus" Content="+" HorizontalAlignment="Left" Margin="260,431,0,0" VerticalAlignment="Top" Background="#FF3C3C3C" BorderBrush="{x:Null}" Height="55" Width="80" FontSize="20" FontFamily="Gadugi" Grid.RowSpan="1" AutomationProperties.Name="BtnPlus" Click="BtnMath_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="BtnDot" Content="." HorizontalAlignment="Left" Margin="176,491,0,0" VerticalAlignment="Top" Background="#FF3C3C3C" BorderBrush="{x:Null}" Height="55" Width="80" FontSize="20" FontFamily="Gadugi" Grid.RowSpan="1" AutomationProperties.Name="BtnDot" Click="BtnNum_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="Btn0" Content="0" HorizontalAlignment="Left" Margin="91,491,0,0" VerticalAlignment="Top" Background="#FF3C3C3C" BorderBrush="{x:Null}" Height="55" Width="80" FontSize="20" FontFamily="Gadugi" Grid.RowSpan="1" AutomationProperties.Name="Btn0" Click="BtnNum_Click">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="BtnPM" Content="±" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FF3C3C3C" BorderBrush="{x:Null}" Height="55" Width="80" Margin="6,491,0,0" FontSize="20" FontFamily="Gadugi" Grid.RowSpan="1" AutomationProperties.Name="BtnPM">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+        <Button x:Name="BtnEqual" Content="=" HorizontalAlignment="Left" Margin="260,491,0,0" VerticalAlignment="Top" Background="#FF3C3C3C" BorderBrush="{x:Null}" Height="55" Width="80" FontSize="20" FontFamily="Gadugi" Grid.RowSpan="1" AutomationProperties.Name="BtnEquals">
+            <Button.Foreground>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.AppWorkspaceColorKey}}"/>
+            </Button.Foreground>
+        </Button>
+
+    </Grid>
+</Window>
