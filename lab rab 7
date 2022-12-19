@@ -1,0 +1,124 @@
+using System.Security.Cryptography.X509Certificates;
+using System.Threading;
+using System.Xml.Xsl;
+using Newtonsoft.Json;
+using Telegram.Bot;
+using Telegram.Bot.Args;
+using Telegram.Bot.Exceptions;
+using Telegram.Bot.Polling;
+using Telegram.Bot.Requests;
+using Telegram.Bot.Types;
+using Telegram.Bot.Types.Enums;
+
+var botClient = new TelegramBotClient("");
+using CancellationTokenSource cts = new();
+ReceiverOptions receiverOptions = new()
+{
+    AllowedUpdates = Array.Empty<UpdateType>() // receive all update types
+};
+botClient.StartReceiving(updateHandler: HandleUpdateAsync,pollingErrorHandler: HandlePollingErrorAsync,receiverOptions: receiverOptions,cancellationToken: cts.Token);
+var me = await botClient.GetMeAsync();
+Console.WriteLine($"Start listening for @{me.Username}");
+Console.ReadLine();
+cts.Cancel();
+async Task HandleUpdateAsync(ITelegramBotClient botClient, Update update, CancellationToken cancellationToken)
+{
+    var command = update.Message.Text;
+    if (command != null)
+    { 
+        API animal;
+        switch(command)
+        {
+            case "Cat":
+                animal = new Cat();
+                break;
+            case "Dog":
+                animal = new Dog();
+                break;
+            default:
+                botClient.SendTextMessageAsync(update.Message.Chat, "Непонятный запрос");
+                return;
+        }
+        botClient.SendPhotoAsync(
+            update.Message.Chat,
+            animal.image,
+            animal.type
+        );
+    }
+}
+Task HandlePollingErrorAsync(ITelegramBotClient botClient, Exception exception, CancellationToken cancellationToken)
+{
+    var ErrorMessage = exception switch
+    {
+        ApiRequestException apiRequestException
+            => $"Telegram API Error:\n[{apiRequestException.ErrorCode}]\n{apiRequestException.Message}",
+        _ => exception.ToString()
+    };
+
+    Console.WriteLine(ErrorMessage);
+    return Task.CompletedTask;
+}
+public interface API
+{
+    public string image { get; }
+    public string type { get; }
+}
+
+public class Dog : API
+{
+    static string API_URL = "https://dog.ceo/api/breeds/image/random";
+    private class JsonShema
+    {
+        public string message { get; set; }
+        public string status { get; set; }
+    }
+    public Dog()
+    {
+        var webClient = new System.Net.WebClient();
+        var json = webClient.DownloadString(API_URL);
+        webClient.Dispose();
+        var data = JsonConvert.DeserializeObject<JsonShema>(json);
+        image = data.message;
+    }
+    public string image { get; }
+    public string type
+    {
+        get
+        {
+            return "Doggy";
+        }
+    }
+    
+}
+public class Cat : API
+{
+    static string API_URL = "https://api.thecatapi.com/v1/images/0XYvRd7oD";
+    private class JsonShema
+    {
+        public string id { get; set; }
+        public string url { get; set; }
+        public int width { get; set; }
+        public int height { get; set; }
+        [JsonIgnore]
+
+        public string[] breeds { get; set; }
+
+    }
+    public Cat()
+    {
+        var webClient = new System.Net.WebClient();
+        var json = webClient.DownloadString(API_URL);
+        webClient.Dispose();
+        var data = JsonConvert.DeserializeObject<JsonShema>(json);
+        image = data.url;
+    }
+    public string image { get; }
+    public string type
+    {
+        get
+        {
+            return "Kitty";
+        }
+    }
+
+}
