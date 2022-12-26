@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="lab_rab_8.MainPage">
+
+    <StackLayout>
+        <Grid x:Name="grid">
+
+            <Grid.ColumnDefinitions>
+
+                <!--Окно состоит из трех столбцов - Column 
+
+            Это столбцы - время запуска таймера, значение таймера, и время окончания 
+
+            при этом для заголовка приложения и кнопки эти столбцы объединены 
+
+             
+
+            ширина столбцов 25* - 50* - 25* означает, что центральный столбец будет занимать  
+
+            50% экрана, а левый и правый - по 25% 
+
+            -->
+
+                <ColumnDefinition Width="25*"/>
+
+                <ColumnDefinition Width="50*"/>
+
+                <ColumnDefinition Width="25*"/>
+
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+
+                <!--И пять строк: 
+
+            Заголовок 
+
+            Кнопка 
+
+            Подписи start-timer-stop 
+
+            Значения текущего таймера 
+
+            Список предыдущих замеров 
+
+             
+
+            Здесь высота * у последней строки означает, что она будет занимать все доступное пространство,  
+
+            которое не занято другими строками 
+
+            -->
+
+                <RowDefinition Height="100"/>
+
+                <RowDefinition Height="100"/>
+
+                <RowDefinition Height="50"/>
+
+                <RowDefinition Height="100"/>
+
+                <RowDefinition Height="*" />
+
+            </Grid.RowDefinitions>
+
+
+
+            <!--Заголовок приложения, свойство Row задает номер строки, в которой заголовок будет располагаться 
+
+            А свойство ColumnSpan=3 - то, что заголовок занимает все три столбца 
+
+        -->
+
+            <Frame  Grid.Row="0" Grid.ColumnSpan="3" BackgroundColor="#2196F3" Padding="20" CornerRadius="0">
+
+                <Label Text="Timer App" HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+
+            </Frame>
+
+
+
+            <!--Кнопка START Строка 1, столбец 1 -->
+
+            <Button Grid.Row="1" Grid.Column="1" x:Name="btnStart" Text="Start" FontSize="30" MinimumHeightRequest="100" CornerRadius="50" Clicked="btnStart_Clicked" />
+
+
+
+            <!-- Подписи к результатам измерений -->
+
+            <Label Grid.Column="0" Grid.Row="2" FontSize="20"  HorizontalTextAlignment="Center" VerticalTextAlignment="End" Text="Start"/>
+
+            <Label Grid.Column="1" Grid.Row="2" FontSize="30"  HorizontalTextAlignment="Center" Text="Timer"/>
+
+            <Label Grid.Column="2" Grid.Row="2" FontSize="20"  HorizontalTextAlignment="Center" VerticalTextAlignment="End" Text="Stop"/>
+
+
+
+            <!-- Сюда будут выводиться измерения -->
+
+            <Label Grid.Column="0" Grid.Row="3" FontSize="20"  HorizontalTextAlignment="Center" x:Name="lblStartTime"/>
+
+            <Label Grid.Column="1" Grid.Row="3" FontSize="30"  HorizontalTextAlignment="Center" x:Name="lblTimer"/>
+
+            <Label Grid.Column="2" Grid.Row="3" FontSize="20"  HorizontalTextAlignment="Center" x:Name="lblStopTime"/>
+
+
+
+            <!-- Последняя строка, здесь будет отображаться история измерений в прокручиващемся списке -->
+
+            <ScrollView Grid.Row="4" Grid.ColumnSpan="3" BackgroundColor="#ebebeb" Margin="0, 30, 0, 0">
+
+                <StackLayout x:Name="scrollLayout" Orientation="Vertical" VerticalOptions="Start"/>
+
+            </ScrollView>
+
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
